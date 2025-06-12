@@ -7,11 +7,173 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Login</title>
+		<link rel="stylesheet" href="./../style/main.css" />
+		<link rel="stylesheet" href="./style/style.css" />
 	</head>
 	<body>
-		<input type="email" name="" id="email" />
-		<input type="password" name="" id="senha" />
-		<button onclick="logar()">colocar</button>
+		<header class="center flex w-full">
+			<div class="cabecalho">
+				<div>
+					<a href=""><h3>Fortes</h3></a>
+				</div>
+				<nav><a href="">Como funciona?</a></nav>
+			</div>
+		</header>
+		<main class="flex">
+			<div class="w-50 flex column items-center center">
+				<h1>
+					Gestão Inteligente de
+					<span class="span-titulo">Resíduos</span>!
+				</h1>
+				<div class="w-80 mt">
+					<p class="text-justify color-black">
+						Conectamos ONGs, cooperativas de reciclagem,
+						voluntários e motoristas para cirar um
+						ecossistema sustentável de gestão de
+						resíduos em eventos sociais
+					</p>
+				</div>
+				<div class="flex column w-full gap center mt">
+					<div class="w-50 flex w-full gap center">
+						<div class="flex div-resumo-area">
+							<div class="icon-div icon-gestao">
+								<img
+									src="../img/icon/user-management.svg"
+									alt="Gestão de Eventos"
+									class="icon"
+								/>
+							</div>
+							<div class="sobre flex column">
+								<h4>Coordenação</h4>
+								<p>Gestão de eventos</p>
+							</div>
+						</div>
+
+						<div>
+							<div class="flex div-resumo-area">
+								<div
+									class="icon-div icon-logistica"
+								>
+									<img
+										src="../img/icon/gps.svg"
+										alt="Gestão de Eventos"
+										class="icon"
+									/>
+								</div>
+								<div class="sobre flex column">
+									<h4>Logística</h4>
+									<p>Rotas otimizadas</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="w-50 flex w-full gap center">
+						<div class="flex div-resumo-area">
+							<div
+								class="icon-div icon-sustentabilidade"
+							>
+								<img
+									src="../img/icon/sustentabilidade.svg"
+									alt="Gestão de Eventos"
+									class="icon"
+								/>
+							</div>
+							<div class="sobre flex column">
+								<h4>Sustentabilidade</h4>
+								<p>Impacto ambiental</p>
+							</div>
+						</div>
+						<div class="flex div-resumo-area">
+							<div class="icon-div icon-grafico">
+								<img
+									src="../img/icon/grafico.svg"
+									alt="Gestão de Eventos"
+									class="icon"
+								/>
+							</div>
+							<div class="sobre flex column">
+								<h4>Relatórios</h4>
+								<p>Dados e métricas</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w-50 flex items-center center">
+				<div class="div-login w-80 flex column items-center">
+					<div class="flex column items-center my-2">
+						<h2>Acesse sua conta</h2>
+						<p>Faça login na plataforma</p>
+					</div>
+					<div class="w-80">
+						<div class="div-input">
+							<div>
+								<label for="email"
+									>E-mail</label
+								>
+								<span
+									class="none erros"
+									id="erro-email"
+									>E-mail não
+									inserido!</span
+								>
+							</div>
+							<input
+								type="email"
+								id="email"
+								class="input input-sem-erro"
+								onclick="removerErroEmail()"
+							/>
+						</div>
+						<div class="div-input mt">
+							<div>
+								<label for="email">Senha</label>
+								<span
+									class="none erros"
+									id="erro-senha"
+									>Senha não inserida!</span
+								>
+							</div>
+							<input
+								type="password"
+								id="senha"
+								class="input input-sem-erro"
+								onclick="removerErroSenha()"
+							/>
+							<div class="my-10px flex center">
+								<span
+									id="erro-conta"
+									class="none"
+									>Conta não
+									encontrada!</span
+								>
+							</div>
+						</div>
+						<div class="flex w-full center my">
+							<button
+								onclick="logar()"
+								class="logar"
+							>
+								Entrar
+							</button>
+						</div>
+						<div
+							class="flex center items-center column gap-10px"
+						>
+							<a href="" class="link-login"
+								>Esqueceu sua senha?</a
+							>
+							<span
+								>Não tem conta?
+								<a href="" class="link-login"
+									>Cadastre-se</a
+								></span
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
 
 		<script src="scripts/login.js"></script>
 	</body>
