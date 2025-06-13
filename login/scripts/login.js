@@ -79,7 +79,7 @@ function logar() {
 	let usuario = verificarCadastro(email, senha);
 
 	if (usuario.verificado) {
-		window.open("../", "_self");
+		window.open("./../", "_self");
 		localStorage.setItem("logado", usuario.verificado);
 		localStorage.setItem("user", JSON.stringify(usuario.user));
 		return;
