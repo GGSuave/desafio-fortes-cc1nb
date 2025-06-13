@@ -7,5 +7,5 @@ if (logado == null) {
 	user = JSON.parse(localStorage.getItem("user"));
 	debugger;
 
-	window.open(`${location.origin}/${user.tipo}/`, "_self");
+	// window.open(`${location.origin}/${user.tipo}/`, "_self");
 }
