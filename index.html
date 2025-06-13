@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 	<head>
 		<meta charset="UTF-8" />
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0"
 		/>
-		<title>Document</title>
+		<title>Fortes</title>
+		<link rel="stylesheet" href="style/carregando.css" />
 	</head>
 	<body>
-		logado
+		<div class="loader-container">
+			<div class="loader-spin"></div>
+		</div>
 
-		<script>
-			const logado = localStorage.getItem("logado");
-			if (logado == null) {
-				window.location.href = "./login/";
-			} else {
-				alert("logado");
-			}
-		</script>
+		<div class="content" style="display: none">
+			<h1>Seu Conteúdo Carregado!</h1>
+			<p>
+				Imagine que este conteúdo apareceu depois de um
+				carregamento.
+			</p>
+		</div>
+		<script src="./script/main.js"></script>
 	</body>
 </html>

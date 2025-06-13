@@ -13,7 +13,6 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 	border-radius: 5px;
 }
 
@@ -65,9 +64,10 @@ p {
 
 .div-login {
 	background-color: white;
-	height: 60vh;
+	height: 70vh;
 	border-radius: 15px;
 	box-shadow: 2px 2px 30px rgb(0, 0, 0, 0.15);
+	width: 80%;
 }
 
 .div-input label {
@@ -120,4 +120,15 @@ p {
 
 #erro-conta {
 	color: red;
+}
+
+@media (max-width: 768px) {
+	.sobre {
+		display: none;
+	}
+
+	.div-login {
+		width: 90%;
+		height: 70vh;
+	}
 }
