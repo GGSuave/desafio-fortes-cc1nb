@@ -76,30 +76,26 @@ function logar() {
 
 	if (preencheu) return;
 
-	let adm = verificarCadastro(email, senha, 0);
+	let usuario = verificarCadastro(email, senha);
 
-	if (adm.verificado) {
+	if (usuario.verificado) {
 		window.open("../", "_self");
-		localStorage.setItem("logado", adm.verificado);
-		localStorage.setItem("user", adm.user);
-		return;
-	}
-
-	let cooperativa = verificarCadastro(email, senha, 1);
-
-	if (cooperativa.verificado) {
-		window.open("../", "_self");
-		localStorage.setItem("logado", cooperativa.verificado);
-		localStorage.setItem("user", cooperativa.user);
+		localStorage.setItem("logado", usuario.verificado);
+		localStorage.setItem("user", JSON.stringify(usuario.user));
 		return;
 	}
 
 	erroConta.classList.remove("none");
 }
 
-function verificarCadastro(email, senha, user) {
-	if (email === dados[user].email && senha == dados[user].senha) {
-		return { verificado: true, user: dados[user] };
+function verificarCadastro(email, senha) {
+	const usuarioEncontrado = dados.find((user) => {
+		return user.email === email && user.senha == senha;
+	});
+
+	if (usuarioEncontrado) {
+		return { verificado: true, user: usuarioEncontrado };
+	} else {
+		return { verificado: false, user: null };
 	}
-	return { verificado: false };
 }
