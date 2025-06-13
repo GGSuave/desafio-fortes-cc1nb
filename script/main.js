@@ -6,5 +6,5 @@ if (logado == null) {
 } else {
 	user = JSON.parse(localStorage.getItem("user"));
 
-	window.open(`./${user.tipo}/`, "_self");
+	window.open(`/${user.tipo}/`, "_self");
 }
