@@ -6,6 +6,7 @@ if (logado == null) {
 } else {
 	user = JSON.parse(localStorage.getItem("user"));
 
+	debugger;
 	const pathSegments = window.location.pathname.split("/");
 
 	let projectBase = "";
