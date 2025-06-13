@@ -129,6 +129,10 @@ p {
 
 	.div-login {
 		width: 90%;
-		height: 70vh;
+		height: 60vh;
+	}
+
+	main {
+		height: 90vh;
 	}
 }

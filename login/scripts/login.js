@@ -1,12 +1,12 @@
 const dados = [
 	{
-		tipo: "adm",
+		tipo: "coordenador",
 		email: "admin@fortes.com.br",
 		senha: "123456",
 	},
 	{
 		tipo: "cooperativas",
-		email: "cooperativas@fortes.com.br ",
+		email: "cooperativas@fortes.com.br",
 		senha: "123456",
 	},
 ];
@@ -94,8 +94,8 @@ function verificarCadastro(email, senha) {
 	});
 
 	if (usuarioEncontrado) {
-		return { verificado: true, user: usuarioEncontrado };
+		return {verificado: true, user: usuarioEncontrado};
 	} else {
-		return { verificado: false, user: null };
+		return {verificado: false, user: null};
 	}
 }

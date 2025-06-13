@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Fortes - Coordenador</title>
+		<link rel="stylesheet" href="./../style/main.css" />
+		<link rel="stylesheet" href="./style/style.css" />
+	</head>
+	<body>
+		<header class="center flex w-full">
+			<div class="w-80 flex cabecalho-logado">
+				<div class="w-50">
+					<div class="flex gap items-center">
+						<div class="logo flex gap items-center">
+							<img
+								src="../img/logo/logo.png"
+								alt="Logo da Fortes"
+								class="img-fortes"
+							/>
+							<h3 id="nome-forte">Fortes</h3>
+						</div>
+						<span class="cabecalho-funcao"
+							>Coordenador</span
+						>
+					</div>
+				</div>
+				<div class="w-50 div-perfil flex gap">
+					<img
+						src="../img/perfil/carla.png"
+						alt="Foto de Perfil"
+						class="img-perfil"
+					/>
+					<button onclick="sair()" class="btn-sair">
+						<img
+							src="./../img/icon/sair.png"
+							alt="sair da conta"
+							class="img-sair"
+							title="Sair da conta"
+						/>
+					</button>
+				</div>
+			</div>
+		</header>
+		<main class="flex center w-full">
+			<div class="div-main">
+				<div class="saudacao center flex column">
+					<h2>Bem-vinda, Carla!</h2>
+					<p>
+						Gerencie seus eventos e acompanhe o impacto
+						ambiental da sua organização.
+					</p>
+				</div>
+				<div class="div-cards flex gap items-center center">
+					<div class="cards">
+						<div class="flex">
+							<div class="w-50">
+								<p>Eventos Ativos</p>
+								<h3>3</h3>
+							</div>
+							<div
+								class="w-50 flex items-center center"
+							>
+								<div class="calender">
+									<img
+										src="./../img/icon/calendr.svg"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center gap-5px">
+							<img
+								src="./../img/icon/grafico-subida.svg"
+								alt="gráfico subindo"
+								class="img-grafico"
+							/>
+							<span class="subiu">+2 este mês</span>
+						</div>
+					</div>
+					<div class="cards">
+						<div class="flex">
+							<div class="w-50">
+								<p>Resíduos Coletados</p>
+								<h3>180kg</h3>
+							</div>
+							<div
+								class="w-50 flex items-center center"
+							>
+								<div class="reciclar">
+									<img
+										src="./../img/icon/reciclagem.svg"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center gap-5px">
+							<img
+								src="./../img/icon/grafico-subida.svg"
+								alt="gráfico subindo"
+								class="img-grafico"
+							/>
+							<span class="subiu"
+								>+15% a mais esse mês</span
+							>
+						</div>
+					</div>
+					<div class="cards">
+						<div class="flex">
+							<div class="w-50">
+								<p>Participantes</p>
+								<h3>780</h3>
+							</div>
+							<div
+								class="w-50 flex items-center center"
+							>
+								<div class="participantes">
+									<img
+										src="./../img/icon/user-management.svg"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center gap-5px">
+							<img
+								src="./../img/icon/grafico-subida.svg"
+								alt="gráfico subindo"
+								class="img-grafico"
+							/>
+							<span class="subiu"
+								>Média de 260/evento</span
+							>
+						</div>
+					</div>
+					<div class="cards">
+						<div class="flex">
+							<div class="w-50">
+								<p>Eventos Ativos</p>
+								<h3>3</h3>
+							</div>
+							<div
+								class="w-50 flex items-center center"
+							>
+								<div class="gps">
+									<img
+										src="./../img/icon/gps.svg"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="div-notificacoes my">
+					<div class="notificacoes-header">
+						<img
+							src="./../img/icon/notification.svg"
+							alt="Ícone de sino de Notificações"
+							class="notificacoes-bell-icon"
+						/>
+						<h2>Notificações</h2>
+					</div>
+					<ul id="notificacoes-list">
+						<li class="notificacao-item">
+							<span
+								class="notificacao-status-dot status-confirmado-dot"
+							></span>
+							<div class="notificacao-content">
+								<p>
+									Coleta confirmada para
+									Festival de Verão
+								</p>
+								<span>2h atrás</span>
+							</div>
+						</li>
+						<li class="notificacao-item">
+							<span
+								class="notificacao-status-dot status-pendente-dot"
+							></span>
+							<div class="notificacao-content">
+								<p>
+									Aguardando confirmação -
+									Feira Comunitária
+								</p>
+								<span>4h atrás</span>
+							</div>
+						</li>
+						<li class="notificacao-item">
+							<span
+								class="notificacao-status-dot status-agendado-dot"
+							></span>
+							<div class="notificacao-content">
+								<p>Novo relatório disponível</p>
+								<span>1 dia atrás</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="datagrid my">
+					<div class="flex datagrid-header">
+						<div>
+							<h2>Meus Eventos</h2>
+							<span
+								>Gerencie e acompanhe seus
+								eventos</span
+							>
+						</div>
+						<div>
+							<a
+								href="./cadastro.html"
+								class="btn-novo-evento"
+							>
+								+ Novo Evento
+							</a>
+						</div>
+					</div>
+					<div>
+						<ul id="datagrid-list">
+							<li class="flex datagrid-item">
+								<div class="datagrid-icon-div">
+									<img
+										src="./../img/icon/calendr.svg"
+										alt="Ícone de Calendário"
+									/>
+								</div>
+								<div class="datagrid-details">
+									<h4>
+										Festival de Verão
+										2024
+									</h4>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/clock.svg"
+											alt="Hora"
+											class="info-icon"
+										/>
+										<span
+											>15 Jan
+											2024</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/map-pin.svg"
+											alt="Local"
+											class="info-icon"
+										/>
+										<span
+											>Parque
+											Central</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/users.svg"
+											alt="Pessoas"
+											class="info-icon"
+										/>
+										<span
+											>500
+											pessoas</span
+										>
+									</div>
+								</div>
+								<div class="datagrid-metrics">
+									<h4>120Kg</h4>
+									<span>estimativa</span>
+								</div>
+								<div class="datagrid-status">
+									<span
+										class="status-confirmado"
+										>Confirmado</span
+									>
+								</div>
+							</li>
+							<li class="flex datagrid-item">
+								<div class="datagrid-icon-div">
+									<img
+										src="./../img/icon/calendr.svg"
+										alt="Ícone de Calendário"
+									/>
+								</div>
+								<div class="datagrid-details">
+									<h4>Feira Comunitária</h4>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/clock.svg"
+											alt="Hora"
+											class="info-icon"
+										/>
+										<span
+											>22 Jan
+											2024</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/map-pin.svg"
+											alt="Local"
+											class="info-icon"
+										/>
+										<span
+											>Praça da
+											Comunidade</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/users.svg"
+											alt="Pessoas"
+											class="info-icon"
+										/>
+										<span
+											>200
+											pessoas</span
+										>
+									</div>
+								</div>
+								<div class="datagrid-metrics">
+									<h4>45Kg</h4>
+									<span>estimativa</span>
+								</div>
+								<div class="datagrid-status">
+									<span
+										class="status-pendente"
+										>Pendente</span
+									>
+								</div>
+							</li>
+							<li class="flex datagrid-item">
+								<div class="datagrid-icon-div">
+									<img
+										src="./../img/icon/calendr.svg"
+										alt="Ícone de Calendário"
+									/>
+								</div>
+								<div class="datagrid-details">
+									<h4>
+										Workshop
+										Sustentabilidade
+									</h4>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/clock.svg"
+											alt="Hora"
+											class="info-icon"
+										/>
+										<span
+											>28 Jan
+											2024</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/map-pin.svg"
+											alt="Local"
+											class="info-icon"
+										/>
+										<span
+											>Centro
+											Cultural</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/users.svg"
+											alt="Pessoas"
+											class="info-icon"
+										/>
+										<span
+											>80
+											pessoas</span
+										>
+									</div>
+								</div>
+								<div class="datagrid-metrics">
+									<h4>15Kg</h4>
+									<span>estimativa</span>
+								</div>
+								<div class="datagrid-status">
+									<span
+										class="status-agendado"
+										>Agendado</span
+									>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+	<script src="./script/script.js"></script>
+	<script src="./../script/funcoes-main.js"></script>
+</html>

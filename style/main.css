@@ -1,11 +1,16 @@
 * {
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
 }
 
 a {
 	text-decoration: none;
 	color: black;
+}
+
+header {
+	border-bottom: 1px solid black;
 }
 
 .cabecalho {
@@ -14,6 +19,101 @@ a {
 	justify-content: space-between;
 	width: 80%;
 	align-items: center;
+}
+
+.cabecalho-logado {
+	height: 7vh;
+	align-items: center;
+}
+
+.cabecalho-funcao {
+	background-color: rgb(220, 252, 231);
+	padding: 5px 10px;
+	border-radius: 40px;
+}
+
+.img-fortes {
+	width: 40px;
+	height: 40px;
+}
+
+.img-perfil {
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+}
+
+.img-sair {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+.div-perfil {
+	justify-content: end;
+}
+
+.btn-sair {
+	background-color: white;
+	border: none;
+}
+
+.saudacao {
+	height: 15vh;
+}
+
+.div-main {
+	width: 80%;
+}
+
+.cards {
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid rgb(237, 238, 239);
+	box-shadow: 1px 1px 30px rgb(237, 238, 239);
+	padding: 10px;
+	width: 350px;
+}
+
+.cards p {
+	font-size: 12px;
+}
+
+.card-nome {
+	flex-wrap: nowrap;
+}
+
+.subiu {
+	color: rgb(97, 188, 130);
+}
+
+.img-grafico {
+	width: 20px;
+	height: 20px;
+}
+
+.calender {
+	background-color: rgb(220, 252, 231);
+	padding: 5px 15px;
+	border-radius: 10px;
+}
+
+.reciclar {
+	background-color: rgb(219, 234, 254);
+	padding: 5px 15px;
+	border-radius: 10px;
+}
+
+.participantes {
+	background-color: rgb(243, 232, 255);
+	padding: 5px 15px;
+	border-radius: 10px;
+}
+
+.gps {
+	background-color: rgb(255, 237, 213);
+	padding: 5px 15px;
+	border-radius: 10px;
 }
 
 .w-50 {
@@ -35,6 +135,10 @@ a {
 
 .gap {
 	gap: 1rem;
+}
+
+.gap-5px {
+	gap: 5px;
 }
 
 .gap-10px {
@@ -89,8 +193,370 @@ a {
 	height: 100vh;
 }
 
+.vh-100-porcento {
+	height: 100%;
+}
+
+.datagrid {
+	width: 100%;
+	margin: 1rem auto;
+	background-color: white;
+	padding: 50px;
+	border-radius: 20px;
+}
+
+.datagrid-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+
+.datagrid h2 {
+	font-size: 1.8em;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.datagrid span {
+	font-size: 0.9em;
+	color: #666;
+}
+
+.btn-novo-evento {
+	background-color: #28a745;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+.btn-novo-evento img {
+	width: 16px;
+	height: 16px;
+}
+
+#datagrid-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.datagrid-item {
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid rgb(237, 238, 239);
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.05);
+	padding: 15px 20px;
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	gap: 15px;
+}
+
+.datagrid-icon-div {
+	background-color: rgb(220, 252, 231);
+	padding: 8px;
+	border-radius: 12px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.datagrid-icon-div img {
+	width: 24px;
+	height: 24px;
+}
+
+.datagrid-details {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	min-width: 250px;
+}
+
+.datagrid-info-line {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-top: 2px;
+}
+
+.datagrid-info-line img.info-icon {
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+}
+
+.datagrid-info-line span {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 0.85em;
+}
+
+.datagrid-metrics {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	white-space: nowrap;
+	flex-shrink: 0;
+	min-width: 80px;
+}
+
+.datagrid-metrics h4 {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #333;
+	margin: 0;
+}
+
+.datagrid-metrics span {
+	font-size: 0.8em;
+	color: #666;
+}
+
+.datagrid-status {
+	flex-shrink: 0;
+}
+
+.status-confirmado,
+.status-pendente,
+.status-agendado {
+	padding: 5px 10px;
+	border-radius: 20px;
+	font-size: 0.8em;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.status-confirmado {
+	background-color: rgb(220, 252, 231);
+	color: rgb(34, 139, 34);
+}
+
+.status-pendente {
+	background-color: rgb(255, 237, 213);
+	color: rgb(255, 140, 0);
+}
+
+.status-agendado {
+	background-color: rgb(219, 234, 254);
+	color: rgb(65, 105, 225);
+}
+
+/* --- ESTILOS PARA A SEÇÃO DE NOTIFICAÇÕES --- */
+
+.notificacoes-div {
+	width: 80%; /* Alinha com o resto do conteúdo principal */
+	margin: 2rem auto; /* Centraliza e adiciona margem */
+	max-width: 500px; /* Limita a largura máxima para parecer com a imagem */
+}
+
+.notificacoes-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.notificacoes-bell-icon {
+	width: 28px; /* Tamanho do ícone de sino */
+	height: 28px;
+	color: #333; /* Cor do ícone, se for SVG e puder ser estilizado por CSS */
+}
+
+.notificacoes-header h2 {
+	font-size: 1.6em;
+	color: #333;
+	margin: 0;
+}
+
+#notificacoes-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.notificacoes-div {
+	width: 80%;
+	margin: 2rem auto;
+	max-width: 500px;
+}
+
+.notificacoes-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.notificacoes-bell-icon {
+	width: 28px;
+	height: 28px;
+	color: #333;
+}
+
+.notificacoes-header h2 {
+	font-size: 1.6em;
+	color: #333;
+	margin: 0;
+}
+
+#notificacoes-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.notificacao-item {
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid rgb(237, 238, 239);
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.05);
+	padding: 15px 20px;
+	margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.notificacao-status-dot {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+.status-confirmado-dot {
+	background-color: #28a745;
+}
+
+.status-pendente-dot {
+	background-color: #ffc107;
+}
+
+.status-agendado-dot {
+	background-color: #007bff;
+}
+
+.div-notificacoes {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	background-color: white;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+.div-notificacoes p {
+	font-size: 1em;
+	color: #333;
+	margin: 0;
+	line-height: 1.4;
+}
+
+.div-notificacoes span {
+	font-size: 0.85em;
+	color: #888;
+	margin-top: 4px;
+}
+
 @media (max-width: 768px) {
 	.w-50 {
 		width: 100%;
 	}
+
+	#nome-forte {
+		display: none;
+	}
+
+	.div-main {
+		width: 90%;
+	}
+
+	.div-cards {
+		flex-wrap: wrap;
+	}
+
+	.datagrid {
+		width: 95%;
+	}
+
+	.datagrid-header {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.btn-novo-evento {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.datagrid-item {
+		flex-direction: column;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+
+	.datagrid-icon-div {
+		margin-bottom: 10px;
+	}
+
+	.datagrid-details,
+	.datagrid-metrics,
+	.datagrid-status {
+		width: 100%;
+		min-width: unset;
+		align-items: flex-start;
+	}
+
+	.datagrid-metrics {
+		margin-top: 10px;
+	}
+
+	.datagrid-status {
+		margin-top: 10px;
+	}
+
+	.notificacoes-div {
+		width: 95%;
+		margin: 1.5rem auto;
+	}
+
+	.notificacoes-header {
+		justify-content: center;
+		margin-bottom: 15px;
+	}
+
+	.notificacao-item {
+		padding: 12px 15px;
+	}
+
+	.div-notificacoes p {
+		font-size: 0.95em;
+	}
+
+	.div-notificacoes span {
+		font-size: 0.8em;
+	}
+}
+
+.between {
+	justify-content: space-between;
 }

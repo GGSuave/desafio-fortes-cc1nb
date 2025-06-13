@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Novo Evento - Fortes</title>
+		<link rel="stylesheet" href="./../style/main.css" />
+		<link rel="stylesheet" href="./style/cadastro.css" />
+	</head>
+	<body>
+		<div class="page-wrapper">
+			<header class="main-header">
+				<div class="header-content-wrapper">
+					<div class="header-left">
+						<button
+							class="icon-button back-button"
+							aria-label="Voltar"
+						>
+							<img
+								src="./../img/icon/arrow-left.svg"
+								alt="Seta para voltar"
+								class="icon"
+								onclick="voltar()"
+							/>
+						</button>
+						<div>
+							<h1 class="header-title">
+								Novo Evento
+							</h1>
+							<p class="header-description">
+								Cadastre um novo evento e
+								solicite coleta
+							</p>
+						</div>
+					</div>
+					<div class="header-right">
+						<button
+							class="button button-outline"
+							id="saveDraftBtn"
+							onclick="salvar()"
+						>
+							Salvar Rascunho
+						</button>
+						<button
+							class="button button-primary"
+							id="publishEventBtn"
+							onclick="salvar()"
+						>
+							<img
+								src="./../img/icon/save.svg"
+								alt="Salvar"
+								class="icon-sm icon-white"
+							/>
+							Publicar Evento
+						</button>
+					</div>
+				</div>
+			</header>
+
+			<div class="container main-content-area">
+				<div class="form-layout">
+					<div class="form-main-section">
+						<div class="card">
+							<div class="card-header">
+								<h2 class="card-title">
+									<img
+										src="./../img/icon/calendr.svg"
+										alt="Calendário"
+										class="icon icon-green"
+									/>
+									Informações Básicas
+								</h2>
+								<p class="card-description">
+									Dados principais do evento
+								</p>
+							</div>
+							<div class="card-content space-y-4">
+								<div class="grid-2-cols gap-4">
+									<div class="form-group">
+										<label
+											for="event-name"
+											class="label"
+											>Nome do
+											Evento
+											*</label
+										>
+										<input
+											type="text"
+											id="event-name"
+											class="input"
+											placeholder="Ex: Festival de Verão 2024"
+											onclick="removerErro('event-name')"
+										/>
+										<span
+											class="none erro"
+											id="erro-name"
+											>Nome é
+											obrigatório!</span
+										>
+									</div>
+									<div class="form-group">
+										<label
+											for="event-type"
+											class="label"
+											>Tipo de
+											Evento</label
+										>
+										<select
+											id="event-type"
+											class="select"
+										>
+											<option
+												value=""
+											>
+												Selecione
+												o tipo
+											</option>
+											<option
+												value="festival"
+											>
+												Festival
+											</option>
+											<option
+												value="feira"
+											>
+												Feira
+											</option>
+											<option
+												value="workshop"
+											>
+												Workshop
+											</option>
+											<option
+												value="conferencia"
+											>
+												Conferência
+											</option>
+											<option
+												value="outro"
+											>
+												Outro
+											</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="grid-2-cols gap-4">
+									<div class="form-group">
+										<label
+											for="event-date"
+											class="label"
+											>Data do
+											Evento
+											*</label
+										>
+										<input
+											type="date"
+											id="event-date"
+											class="input"
+											onclick="removerErro('event-date')"
+										/>
+										<span
+											class="none erro"
+											id="erro-date"
+											>Data é
+											obrigatório!</span
+										>
+									</div>
+									<div class="form-group">
+										<label
+											for="event-time"
+											class="label"
+											>Horário</label
+										>
+										<input
+											type="time"
+											id="event-time"
+											class="input"
+										/>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label
+										for="event-location"
+										class="label"
+										>Local do Evento
+										*</label
+									>
+									<input
+										type="text"
+										id="event-location"
+										class="input"
+										placeholder="Endereço completo"
+										onclick="removerErro('event-location')"
+									/>
+									<span
+										class="none erro"
+										id="erro-location"
+										>Local é
+										obrigatório!</span
+									>
+								</div>
+
+								<div class="grid-2-cols gap-4">
+									<div class="form-group">
+										<label
+											for="attendees"
+											class="label"
+											>Público
+											Estimado
+											*</label
+										>
+										<input
+											type="number"
+											id="attendees"
+											class="input"
+											placeholder="Número de participantes"
+											onclick="removerErro('attendees')"
+										/>
+										<span
+											class="none erro"
+											id="erro-publico"
+											>Público é
+											obrigatório!</span
+										>
+									</div>
+									<div class="form-group">
+										<label
+											for="duration"
+											class="label"
+											>Duração
+											(horas)</label
+										>
+										<input
+											type="number"
+											id="duration"
+											class="input"
+											placeholder="Ex: 8"
+										/>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label
+										for="description"
+										class="label"
+										>Descrição</label
+									>
+									<textarea
+										id="description"
+										class="textarea"
+										placeholder="Descreva o evento, atividades e características especiais..."
+										rows="3"
+									></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-sidebar-section">
+						<div class="card">
+							<div class="card-header">
+								<h2 class="card-title-lg">
+									Resumo do Evento
+								</h2>
+							</div>
+							<div class="card-content space-y-4">
+								<div class="summary-item">
+									<span
+										class="summary-label"
+										>Data:</span
+									>
+									<span
+										class="summary-value"
+										id="summaryDate"
+									></span>
+								</div>
+								<div class="summary-item">
+									<span
+										class="summary-label"
+										>Participantes:</span
+									>
+									<span
+										class="summary-value"
+										id="summaryAttendees"
+									></span>
+								</div>
+								<div class="summary-item">
+									<span
+										class="summary-label"
+										>Total de
+										Resíduos:</span
+									>
+									<span
+										class="summary-value text-green"
+										id="summaryTotalWaste"
+									></span>
+								</div>
+								<div class="summary-separator">
+									<p
+										class="summary-sublabel"
+									>
+										Tipos de resíduos:
+									</p>
+									<div
+										class="waste-badges-container"
+										id="wasteBadgesContainer"
+									></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header">
+								<h2 class="card-title-lg">
+									<img
+										src="./../img/icon/clock.svg"
+										alt="Relógio"
+										class="icon icon-orange"
+									/>
+									Solicitação de Coleta
+								</h2>
+							</div>
+							<div class="card-content space-y-4">
+								<div class="form-group">
+									<label
+										for="collection-date"
+										class="label"
+										>Data Preferida para
+										Coleta</label
+									>
+									<input
+										type="date"
+										id="collection-date"
+										class="input"
+									/>
+								</div>
+								<div class="form-group">
+									<label
+										for="collection-time"
+										class="label"
+										>Horário
+										Preferido</label
+									>
+									<select
+										id="collection-time"
+										class="select"
+									>
+										<option
+											value="morning"
+										>
+											Manhã (8h-12h)
+										</option>
+										<option
+											value="afternoon"
+										>
+											Tarde
+											(13h-17h)
+										</option>
+										<option
+											value="evening"
+										>
+											Noite
+											(18h-22h)
+										</option>
+										<option
+											value="flexible"
+										>
+											Flexível
+										</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label
+										for="special-instructions"
+										class="label"
+										>Instruções
+										Especiais</label
+									>
+									<textarea
+										id="special-instructions"
+										class="textarea"
+										placeholder="Informações adicionais para a coleta..."
+										rows="3"
+									></textarea>
+								</div>
+							</div>
+						</div>
+
+						<div class="card card-blue-bg">
+							<div class="card-content p-4">
+								<h3 class="help-card-title">
+									Precisa de ajuda?
+								</h3>
+								<p
+									class="help-card-description"
+								>
+									Nossa equipe está pronta
+									para ajudar você a
+									planejar a gestão de
+									resíduos do seu evento.
+								</p>
+								<button
+									class="button button-outline-blue full-width"
+								>
+									Falar com Especialista
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="./../script/funcoes-main.js"></script>
+	</body>
+</html>
