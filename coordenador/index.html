@@ -90,7 +90,9 @@
 						<div class="flex">
 							<div class="w-50">
 								<p>Resíduos Coletados</p>
-								<h3 id="residuos-coletados">180kg</h3>
+								<h3 id="residuos-coletados">
+									180kg
+								</h3>
 							</div>
 							<div
 								class="w-50 flex items-center center"
@@ -117,7 +119,9 @@
 						<div class="flex">
 							<div class="w-50">
 								<p>Participantes</p>
-								<h3 id="total-participantes">780</h3>
+								<h3 id="total-participantes">
+									780
+								</h3>
 							</div>
 							<div
 								class="w-50 flex items-center center"
@@ -137,7 +141,9 @@
 								src="./../img/icon/grafico-subida.svg"
 								alt="gráfico subindo"
 								class="img-grafico"
-							/><span class="subiu" id="media-participantes"
+							/><span
+								class="subiu"
+								id="media-participantes"
 								>Média de 260/evento</span
 							>
 						</div>
@@ -209,23 +215,30 @@
 				</div>
 				<div class="datagrid my">
 					<div class="flex datagrid-header">
-    <div>
-        <h2>Meus Eventos</h2>
-        <span>Gerencie e acompanhe seus eventos</span>
-    </div>
-    <div class="datagrid-header-actions">
-        <div class="busca-container">
-            <input 
-                type="text" 
-                id="busca-eventos" 
-                placeholder="Buscar eventos..." 
-                class="input-busca"
-                onkeyup="buscarEventos()"
-            />
-        </div>
-        <a href="./cadastro.html" class="btn-novo-evento">+ Novo Evento</a>
-    </div>
-</div>
+						<div>
+							<h2>Meus Eventos</h2>
+							<span
+								>Gerencie e acompanhe seus
+								eventos</span
+							>
+						</div>
+						<div class="datagrid-header-actions">
+							<div class="busca-container">
+								<input
+									type="text"
+									id="busca-eventos"
+									placeholder="Buscar eventos..."
+									class="input-busca"
+									onkeyup="buscarEventos()"
+								/>
+							</div>
+							<a
+								href="./cadastro.html"
+								class="btn-novo-evento"
+								>+ Novo Evento</a
+							>
+						</div>
+					</div>
 					<div>
 						<ul id="datagrid-list">
 							<!-- Os eventos serão carregados aqui dinamicamente -->
@@ -242,69 +255,96 @@
 			function editarEvento(id) {
 				const evento = eventosCRUD.getEventoPorId(id);
 				if (!evento) {
-					alert('Evento não encontrado!');
+					alert("Evento não encontrado!");
 					return;
 				}
-				window.location.href = './cadastro.html?edit=' + id;
+				window.location.href = "./cadastro.html?edit=" + id;
 			}
 
 			function excluirEvento(id) {
 				const evento = eventosCRUD.getEventoPorId(id);
 				if (!evento) {
-					alert('Evento não encontrado!');
+					alert("Evento não encontrado!");
 					return;
 				}
 
-				if (confirm(`Tem certeza que deseja excluir o evento "${evento.nome}"?`)) {
+				if (
+					confirm(
+						`Tem certeza que deseja excluir o evento "${evento.nome}"?`
+					)
+				) {
 					const sucesso = eventosCRUD.excluirEvento(id);
 					if (sucesso) {
-						alert('Evento excluído com sucesso!');
+						alert("Evento excluído com sucesso!");
 						carregarEventos();
 						carregarEstatisticas();
 					} else {
-						alert('Erro ao excluir evento!');
+						alert("Erro ao excluir evento!");
 					}
 				}
 			}
 
 			function buscarEventos() {
-				const termo = document.getElementById('busca-eventos')?.value || '';
-				const eventos = termo ? eventosCRUD.buscarEventos(termo) : eventosCRUD.getEventos();
+				const termo =
+					document.getElementById("busca-eventos")?.value ||
+					"";
+				const eventos = termo
+					? eventosCRUD.buscarEventos(termo)
+					: eventosCRUD.getEventos();
 				renderizarEventos(eventos);
 			}
 
 			function formatarData(dataString) {
 				const data = new Date(dataString);
-				return data.toLocaleDateString('pt-BR');
+				return data.toLocaleDateString("pt-BR");
 			}
 
 			function formatarStatus(status) {
 				const statusMap = {
-					confirmado: { texto: 'Confirmado', classe: 'status-confirmado' },
-					pendente: { texto: 'Pendente', classe: 'status-pendente' },
-					agendado: { texto: 'Agendado', classe: 'status-agendado' },
-					cancelado: { texto: 'Cancelado', classe: 'status-cancelado' }
+					confirmado: {
+						texto: "Confirmado",
+						classe: "status-confirmado",
+					},
+					pendente: {
+						texto: "Pendente",
+						classe: "status-pendente",
+					},
+					agendado: {
+						texto: "Agendado",
+						classe: "status-agendado",
+					},
+					cancelado: {
+						texto: "Cancelado",
+						classe: "status-cancelado",
+					},
 				};
-				return statusMap[status] || { texto: status, classe: 'status-pendente' };
+				return (
+					statusMap[status] || {
+						texto: status,
+						classe: "status-pendente",
+					}
+				);
 			}
 
 			function renderizarEventos(eventos) {
-				const listaEventos = document.getElementById('datagrid-list');
+				const listaEventos =
+					document.getElementById("datagrid-list");
 				if (!listaEventos) return;
 
-				listaEventos.innerHTML = '';
+				listaEventos.innerHTML = "";
 
 				if (eventos.length === 0) {
-					listaEventos.innerHTML = '<li class="sem-eventos">Nenhum evento encontrado</li>';
+					listaEventos.innerHTML =
+						'<li class="sem-eventos">Nenhum evento encontrado</li>';
 					return;
 				}
 
-				eventos.forEach(evento => {
+				eventos.forEach((evento) => {
 					const statusInfo = formatarStatus(evento.status);
 					const dataFormatada = formatarData(evento.data);
 
-					const li = document.createElement('li');
-					li.className = 'flex datagrid-item';
+					const li = document.createElement("li");
+					li.className = "flex datagrid-item";
 					li.innerHTML = `
 						<div class="datagrid-icon-div">
 							<img src="./../img/icon/calendr.svg" alt="Ícone de Calendário" />
@@ -354,20 +394,34 @@
 				const stats = eventosCRUD.getEstatisticas();
 
 				const elementos = {
-					eventosAtivos: document.getElementById('eventos-ativos'),
-					residuosColetados: document.getElementById('residuos-coletados'),
-					participantes: document.getElementById('total-participantes'),
-					mediaParticipantes: document.getElementById('media-participantes')
+					eventosAtivos:
+						document.getElementById("eventos-ativos"),
+					residuosColetados:
+						document.getElementById(
+							"residuos-coletados"
+						),
+					participantes: document.getElementById(
+						"total-participantes"
+					),
+					mediaParticipantes: document.getElementById(
+						"media-participantes"
+					),
 				};
 
-				if (elementos.eventosAtivos) elementos.eventosAtivos.textContent = stats.eventosAtivos;
-				if (elementos.residuosColetados) elementos.residuosColetados.textContent = `${stats.totalResiduos}kg`;
-				if (elementos.participantes) elementos.participantes.textContent = stats.totalParticipantes;
-				if (elementos.mediaParticipantes) elementos.mediaParticipantes.textContent = `Média de ${stats.mediaParticipantesPorEvento}/evento`;
+				if (elementos.eventosAtivos)
+					elementos.eventosAtivos.textContent =
+						stats.eventosAtivos;
+				if (elementos.residuosColetados)
+					elementos.residuosColetados.textContent = `${stats.totalResiduos}kg`;
+				if (elementos.participantes)
+					elementos.participantes.textContent =
+						stats.totalParticipantes;
+				if (elementos.mediaParticipantes)
+					elementos.mediaParticipantes.textContent = `Média de ${stats.mediaParticipantesPorEvento}/evento`;
 			}
 
 			// Inicializar página quando carregar
-			document.addEventListener('DOMContentLoaded', function() {
+			document.addEventListener("DOMContentLoaded", function () {
 				carregarEventos();
 				carregarEstatisticas();
 			});
