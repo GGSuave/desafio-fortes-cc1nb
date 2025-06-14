@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Fortes - Cooperativas</title>
+		<link rel="stylesheet" href="./../style/main.css" />
+		<link rel="stylesheet" href="./style/style.css" />
+	</head>
+	<body>
+		<header class="center flex w-full">
+			<div class="w-80 flex cabecalho-logado">
+				<div class="w-50">
+					<div class="flex gap items-center">
+						<div class="logo flex gap items-center">
+							<img
+								src="../img/logo/logo.png"
+								alt="Logo da Fortes"
+								class="img-fortes"
+							/>
+							<h3 id="nome-forte">Fortes</h3>
+						</div>
+						<span class="cabecalho-funcao"
+							>Cooperativas</span
+						>
+					</div>
+				</div>
+				<div class="w-50 div-perfil flex gap">
+					<img
+						src="../img/perfil/luis.png"
+						alt="Foto de Perfil"
+						class="img-perfil"
+					/>
+					<button onclick="sair()" class="btn-sair">
+						<img
+							src="./../img/icon/sair.png"
+							alt="sair da conta"
+							class="img-sair"
+							title="Sair da conta"
+						/>
+					</button>
+				</div>
+			</div>
+		</header>
+		<main class="flex center w-full">
+			<div class="div-main">
+				<div class="saudacao center flex column">
+					<h2>Olá, Luís!</h2>
+					<p>
+						Gerencie seus eventos e acompanhe o impacto
+						ambiental da sua organização.
+					</p>
+				</div>
+				<div class="div-cards flex gap items-center center">
+					<div class="cards">
+						<div class="flex">
+							<div class="w-50">
+								<p>Coletas hoje</p>
+								<h3>3</h3>
+							</div>
+							<div
+								class="w-50 flex items-center center"
+							>
+								<div class="calender img-card">
+									<img
+										src="./../img/icon/calendr.svg"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center gap-5px">
+							<img
+								src="./../img/icon/check.svg"
+								alt="correto"
+								class="img-grafico"
+							/>
+							<span class="subiu"
+								>+1 confirmada</span
+							>
+						</div>
+					</div>
+					<div class="cards">
+						<div class="flex">
+							<div class="w-50">
+								<p>Material Coletado</p>
+								<h3>425Kg</h3>
+							</div>
+							<div
+								class="w-50 flex items-center center"
+							>
+								<div class="img-card pacote">
+									<img
+										src="./../img/icon/reciclagem.svg"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center gap-5px">
+							<img
+								src="./../img/icon/grafico-subida.svg"
+								alt="gráfico subindo"
+								class="img-grafico"
+							/>
+							<span class="subiu"
+								>+12% esta semana</span
+							>
+						</div>
+					</div>
+					<div class="cards">
+						<div class="flex">
+							<div class="w-50">
+								<p>Distância Total</p>
+								<h3>16.1Km</h3>
+							</div>
+							<div
+								class="w-50 flex items-center center"
+							>
+								<div
+									class="participantes img-card"
+								>
+									<img
+										src="./../img/icon/route.svg"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center gap-5px">
+							<span>Rota otimizada</span>
+						</div>
+					</div>
+					<div class="cards">
+						<div class="flex">
+							<div class="w-50">
+								<p>Oportunidades</p>
+								<h3>2</h3>
+							</div>
+							<div
+								class="w-50 flex items-center center"
+							>
+								<div
+									class="oportunidade img-card"
+								>
+									<img
+										src="./../img/icon/users.svg"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+						<div class="flex items-center gap-5px">
+							<span class="eventos"
+								>Novos eventos próximos</span
+							>
+						</div>
+					</div>
+				</div>
+
+				<div class="trocar-aba my-2 flex">
+					<button
+						class="selecionado"
+						id="coletas"
+						onclick="abrirColeta()"
+					>
+						Coletas
+					</button>
+					<button onclick="abrirMapa()" id="mapasBtn">
+						Mapa e Rotas
+					</button>
+				</div>
+
+				<div class="datagrid my" id="datagrid">
+					<div class="flex datagrid-header">
+						<div>
+							<h2>Coletas Programadas</h2>
+							<span
+								>Gerencie e acompanhe suas
+								coletas agendadas</span
+							>
+						</div>
+					</div>
+					<div>
+						<ul id="datagrid-list">
+							<li class="datagrid-item">
+								<div class="datagrid-col-left">
+									<div
+										class="datagrid-icon-container"
+									>
+										<span
+											class="notificacao-status-dot status-confirmado-dot"
+										></span>
+									</div>
+								</div>
+								<div
+									class="datagrid-col-center"
+								>
+									<div
+										class="flex items-center gap-10px wrap-on-small"
+									>
+										<h4>
+											Festival de
+											Verão 2024
+										</h4>
+										<span
+											class="statu-titulo status-confirmado-titulo"
+											>Confirmado</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/clock.svg"
+											alt="Hora"
+											class="info-icon"
+										/>
+										<span
+											>15 Jan 2024
+											às 14:00</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/map-pin.svg"
+											alt="Local"
+											class="info-icon"
+										/>
+										<span
+											>Parque
+											Central (5,2
+											Km)</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/users.svg"
+											alt="Pessoas"
+											class="info-icon"
+										/>
+										<span
+											>ONG Esperança
+											Verde</span
+										>
+									</div>
+									<div
+										class="coleta-items-container flex wrap-on-small my-10px"
+									>
+										<div
+											class="coleta-item"
+										>
+											<span
+												>Plástico:
+												50kg</span
+											>
+										</div>
+										<div
+											class="coleta-item"
+										>
+											<span
+												>Papel:
+												30kg</span
+											>
+										</div>
+										<div
+											class="coleta-item"
+										>
+											<span
+												>Orgânico:
+												100kg</span
+											>
+										</div>
+									</div>
+									<div
+										class="datagrid-metrics"
+									>
+										<h4>120Kg</h4>
+										<span
+											>estimativa</span
+										>
+									</div>
+								</div>
+								<div class="datagrid-col-right">
+									<div
+										class="datagrid-actions"
+									>
+										<button
+											class="button-detalhes"
+										>
+											Ver Detalhes
+										</button>
+									</div>
+								</div>
+							</li>
+
+							<li class="datagrid-item">
+								<div class="datagrid-col-left">
+									<div
+										class="datagrid-icon-container"
+									>
+										<span
+											class="notificacao-status-dot status-pendente-dot"
+										></span>
+									</div>
+								</div>
+								<div
+									class="datagrid-col-center"
+								>
+									<div
+										class="flex items-center gap-10px wrap-on-small"
+									>
+										<h4>
+											Feira
+											Comunitária
+										</h4>
+										<span
+											class="statu-titulo status-pendente-titulo"
+											>Pendente</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/clock.svg"
+											alt="Hora"
+											class="info-icon"
+										/>
+										<span
+											>16 Jan 2024
+											às 09:00</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/map-pin.svg"
+											alt="Local"
+											class="info-icon"
+										/>
+										<span
+											>Praça da
+											Comunidade
+											(3.8 km)</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/users.svg"
+											alt="Pessoas"
+											class="info-icon"
+										/>
+										<span
+											>Associação
+											Bairro
+											Novo</span
+										>
+									</div>
+									<div
+										class="coleta-items-container flex wrap-on-small my-10px"
+									>
+										<div
+											class="coleta-item"
+										>
+											<span
+												>Papel:
+												25Kg</span
+											>
+										</div>
+										<div
+											class="coleta-item"
+										>
+											<span
+												>Plástico:
+												20Kg</span
+											>
+										</div>
+									</div>
+									<div
+										class="datagrid-metrics"
+									>
+										<h4>45Kg</h4>
+										<span
+											>estimativa</span
+										>
+									</div>
+								</div>
+								<div class="datagrid-col-right">
+									<div
+										class="datagrid-actions"
+									>
+										<button
+											class="button-detalhes"
+										>
+											Resucar
+										</button>
+										<button
+											class="verde button-detalhes"
+										>
+											Aceitar
+										</button>
+									</div>
+								</div>
+							</li>
+
+							<li class="datagrid-item">
+								<div class="datagrid-col-left">
+									<div
+										class="datagrid-icon-container"
+									>
+										<span
+											class="notificacao-status-dot status-agendado-dot"
+										></span>
+									</div>
+								</div>
+								<div
+									class="datagrid-col-center"
+								>
+									<div
+										class="flex items-center gap-10px wrap-on-small"
+									>
+										<h4>
+											Workshop
+											Sustentabilidade
+										</h4>
+										<span
+											class="statu-titulo status-agendado-titulo"
+											>Agendado</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/clock.svg"
+											alt="Hora"
+											class="info-icon"
+										/>
+										<span
+											>17 Jan 2024
+											às 16:00</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/map-pin.svg"
+											alt="Local"
+											class="info-icon"
+										/>
+										<span
+											>Centro
+											Cultural (7.1
+											km)</span
+										>
+									</div>
+									<div
+										class="datagrid-info-line"
+									>
+										<img
+											src="./../img/icon/users.svg"
+											alt="Pessoas"
+											class="info-icon"
+										/>
+										<span
+											>Centro
+											Cultural
+											Verde</span
+										>
+									</div>
+									<div
+										class="coleta-items-container flex wrap-on-small my-10px"
+									>
+										<div
+											class="coleta-item"
+										>
+											<span
+												>Papel:
+												15kg</span
+											>
+										</div>
+									</div>
+									<div
+										class="datagrid-metrics"
+									>
+										<h4>15Kg</h4>
+										<span
+											>estimativa</span
+										>
+									</div>
+								</div>
+								<div class="datagrid-col-right">
+									<div
+										class="datagrid-actions"
+									>
+										<button
+											class="button-detalhes"
+										>
+											Resucar
+										</button>
+										<button
+											class="verde button-detalhes"
+										>
+											Aceitar
+										</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="mapa" class="datagrid none my">
+					<div class="flex datagrid-header">
+						<div>
+							<h2>Mapa de Coletas e Rotas</h2>
+							<span
+								>Visualize pontos de coleta e
+								otimize suas rotas</span
+							>
+						</div>
+						<div class="w-full">
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.69740516487!2d-40.30178912375613!3d-20.354115581131687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb8160595555555%3A0xeab993fdd7de1f61!2sUniversidade%20Vila%20Velha%20-%20UVV!5e0!3m2!1spt-BR!2sbr!4v1749858040301!5m2!1spt-BR!2sbr"
+								height="450"
+								style="
+									border: 0;
+									border-radius: 20px;
+								"
+								allowfullscreen=""
+								loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"
+								class="w-full"
+							></iframe>
+						</div>
+						<div class="w-full flex cards-div gap">
+							<div
+								class="sugerida w-50 mapas-cards"
+							>
+								<h3>Rota Otimizada Sugerida</h3>
+								<div>
+									<div
+										class="flex between w-full my-10px"
+									>
+										<span
+											>Distância
+											total:</span
+										>
+										<span>16.1 km</span>
+									</div>
+									<div
+										class="flex between w-full"
+									>
+										<span
+											>Tempo
+											estimado:</span
+										>
+										<span
+											>2h
+											30min</span
+										>
+									</div>
+									<div
+										class="flex between w-full my-10px"
+									>
+										<span
+											>Economia de
+											combustível:</span
+										>
+										<span id="economia"
+											>25%</span
+										>
+									</div>
+								</div>
+								<button
+									class="flex items-center aplicar-rota w-full center"
+								>
+									<img
+										src="../img/icon/route.svg"
+										alt=""
+									/>
+									<span style="color: white"
+										>Aplicar Rota</span
+									>
+								</button>
+							</div>
+							<div class="rotas w-50 mapas-cards">
+								<h3>Pontos de Coleta Hoje</h3>
+								<div>
+									<div
+										class="flex between w-full my-10px"
+									>
+										<span>
+											Parque
+											Central</span
+										>
+
+										<span>5.2 km</span>
+									</div>
+									<div
+										class="flex between w-full"
+									>
+										<span
+											>Praça da
+											Comunidade</span
+										>
+										<span>3.8 km</span>
+									</div>
+									<div
+										class="flex between w-full my-10px"
+									>
+										<span
+											>Centro
+											Cultural</span
+										>
+										<span id="economia"
+											>7.1 km</span
+										>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+	<script src="./script/script.js"></script>
+	<script src="./../script/funcoes-main.js"></script>
+</html>

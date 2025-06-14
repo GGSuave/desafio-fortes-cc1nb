@@ -1,0 +1,422 @@
+main {
+	background-color: rgb(239, 249, 250);
+}
+
+.div-main {
+	width: 80%;
+	max-width: 1200px;
+}
+
+.cards {
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid rgb(237, 238, 239);
+	box-shadow: 1px 1px 30px rgb(237, 238, 239);
+	padding: 15px;
+	width: 250px;
+	min-height: 120px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+}
+.cards p {
+	font-size: 0.9em;
+	color: #666;
+	margin-bottom: 5px;
+}
+.cards h3 {
+	font-size: 1.5em;
+	color: #333;
+	margin: 0;
+}
+.img-card {
+	padding: 8px;
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	flex-shrink: 0;
+}
+.img-card img {
+	width: 24px;
+	height: 24px;
+}
+
+.calender {
+	background-color: rgb(219, 234, 254);
+}
+.pacote {
+	background-color: rgb(220, 252, 231);
+}
+.participantes {
+	background-color: rgb(243, 232, 255);
+}
+.oportunidade {
+	background-color: rgb(255, 237, 213);
+}
+
+.img-grafico {
+	width: 18px;
+	height: 18px;
+}
+.subiu {
+	color: rgb(97, 188, 130);
+	font-weight: bold;
+	font-size: 0.9em;
+}
+.eventos {
+	color: rgb(242, 126, 12);
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+.trocar-aba {
+	padding: 15px;
+	background-color: white;
+	border-radius: 25px;
+	justify-content: center;
+	gap: 2rem;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+.trocar-aba button {
+	padding: 8px 18px;
+	background-color: rgb(244, 244, 245);
+	border-radius: 20px;
+	border: none;
+	font-size: 1em;
+	transition: all 0.3s ease;
+	color: rgb(58, 58, 58);
+	font-weight: 500;
+	cursor: pointer;
+}
+.trocar-aba button:hover {
+	background-color: rgb(220, 220, 220);
+}
+.selecionado {
+	background-color: rgb(220, 252, 231) !important;
+	color: rgb(34, 139, 34) !important;
+	font-weight: bold;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.datagrid {
+	width: 100%;
+	margin: 1.5rem auto;
+}
+
+.datagrid-header {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 20px;
+}
+
+.datagrid-header h2 {
+	font-size: 1.8em;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.datagrid-header span {
+	font-size: 0.9em;
+	color: #666;
+}
+
+#datagrid-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.datagrid-item {
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid rgb(237, 238, 239);
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.05);
+	padding: 15px 20px;
+	margin-bottom: 15px;
+	display: flex;
+	align-items: flex-start;
+	gap: 20px;
+	flex-wrap: nowrap;
+}
+
+.datagrid-col-left {
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.datagrid-col-center {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	min-width: 250px;
+	gap: 5px;
+}
+
+.datagrid-col-right {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	flex-shrink: 0;
+	min-width: 120px;
+	gap: 10px;
+}
+
+.datagrid-icon-container {
+	padding: 8px;
+	border-radius: 12px;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+.datagrid-icon-container img {
+	width: 28px;
+	height: 28px;
+}
+
+.calender-green-bg {
+	background-color: rgb(220, 252, 231);
+}
+.calender-yellow-bg {
+	background-color: rgb(255, 237, 213);
+}
+.calender-blue-bg {
+	background-color: rgb(219, 234, 254);
+}
+
+.datagrid-item h4 {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #333;
+	margin: 0;
+	line-height: 1.3;
+}
+
+.statu-titulo {
+	padding: 5px 8px;
+	border-radius: 20px;
+	font-size: 0.75em;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+	margin-left: 10px;
+	flex-shrink: 0;
+}
+
+.status-confirmado-titulo {
+	background-color: rgb(220, 252, 231);
+	color: rgb(34, 139, 34);
+}
+.status-agendado-titulo {
+	background-color: rgb(219, 234, 254);
+	color: rgb(65, 105, 225);
+}
+.status-pendente-titulo {
+	background-color: rgb(255, 237, 213);
+	color: rgb(255, 140, 0);
+}
+
+.datagrid-info-line {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 0.9em;
+	color: #666;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.datagrid-info-line img.info-icon {
+	width: 18px;
+	height: 18px;
+	flex-shrink: 0;
+}
+
+.datagrid-metrics {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 15px;
+	white-space: nowrap;
+	flex-shrink: 0;
+	min-width: unset;
+}
+.datagrid-metrics h4 {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #333;
+	margin: 0;
+	text-align: left;
+}
+.datagrid-metrics span {
+	font-size: 0.8em;
+	color: #888;
+	text-align: left;
+}
+
+.datagrid-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	align-items: flex-end;
+}
+
+.button-detalhes {
+	padding: 8px 12px;
+	background-color: white;
+	border: solid 1px rgb(228, 228, 231);
+	border-radius: 5px;
+	font-size: 0.9em;
+	font-weight: 500;
+	color: #333;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.button-detalhes:hover {
+	background-color: rgb(245, 245, 245);
+}
+
+.verde {
+	background-color: rgb(22, 163, 74) !important;
+	color: white !important;
+	border-color: rgb(22, 163, 74) !important;
+}
+.verde:hover {
+	background-color: rgb(18, 130, 60) !important;
+}
+
+.coleta-items-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 10px;
+}
+
+.coleta-item {
+	padding: 5px 10px;
+	border-radius: 20px;
+	border: solid 1px rgb(233, 234, 237);
+	background-color: #f3f4f6;
+	font-size: 0.8em;
+	color: #555;
+	white-space: nowrap;
+}
+
+.wrap-on-small {
+	flex-wrap: wrap;
+}
+
+.mapas-cards {
+	padding: 10px;
+	border-radius: 15px;
+}
+
+.sugerida {
+	background-color: rgb(240, 253, 244);
+	border: 1px solid rgb(187, 247, 208);
+}
+
+.rotas {
+	border: 1px solid rgb(228, 228, 231);
+}
+
+#economia {
+	color: rgb(27, 176, 144);
+}
+
+.aplicar-rota {
+	padding: 10px;
+	background-color: rgb(22, 163, 74);
+	border: 0px;
+	border-radius: 10px;
+	transition: all 0.5s;
+}
+
+.aplicar-rota:hover {
+	background-color: rgb(21, 128, 61);
+}
+
+@media (max-width: 768px) {
+	.w-50 {
+		width: 100%;
+	}
+
+	#nome-forte {
+		display: none;
+	}
+
+	.div-main {
+		width: 90%;
+	}
+
+	.div-cards {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+	}
+	.cards {
+		width: 100%;
+		max-width: 300px;
+	}
+
+	.datagrid-item {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+	}
+
+	.datagrid-col-left {
+		width: 100%;
+		justify-content: flex-start;
+	}
+
+	.datagrid-col-center,
+	.datagrid-col-right {
+		width: 100%;
+		min-width: unset;
+		align-items: flex-start;
+	}
+
+	.datagrid-metrics {
+		align-items: flex-start;
+		margin-top: 10px;
+	}
+	.datagrid-metrics h4,
+	.datagrid-metrics span {
+		text-align: left;
+	}
+
+	.datagrid-actions {
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-around;
+		gap: 10px;
+	}
+	.button-detalhes.verde,
+	.button-detalhes {
+		flex-grow: 1;
+		max-width: unset;
+	}
+
+	.trocar-aba {
+		flex-direction: column;
+		gap: 10px;
+	}
+	.trocar-aba button {
+		width: 100%;
+	}
+
+	.cards-div {
+		flex-direction: column;
+	}
+}

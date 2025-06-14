@@ -92,26 +92,7 @@ header {
 	height: 20px;
 }
 
-.calender {
-	background-color: rgb(220, 252, 231);
-	padding: 5px 15px;
-	border-radius: 10px;
-}
-
-.reciclar {
-	background-color: rgb(219, 234, 254);
-	padding: 5px 15px;
-	border-radius: 10px;
-}
-
-.participantes {
-	background-color: rgb(243, 232, 255);
-	padding: 5px 15px;
-	border-radius: 10px;
-}
-
-.gps {
-	background-color: rgb(255, 237, 213);
+.img-card {
 	padding: 5px 15px;
 	border-radius: 10px;
 }
@@ -359,12 +340,10 @@ header {
 	color: rgb(65, 105, 225);
 }
 
-/* --- ESTILOS PARA A SEÇÃO DE NOTIFICAÇÕES --- */
-
 .notificacoes-div {
-	width: 80%; /* Alinha com o resto do conteúdo principal */
-	margin: 2rem auto; /* Centraliza e adiciona margem */
-	max-width: 500px; /* Limita a largura máxima para parecer com a imagem */
+	width: 80%;
+	margin: 2rem auto;
+	max-width: 500px;
 }
 
 .notificacoes-header {
@@ -375,9 +354,9 @@ header {
 }
 
 .notificacoes-bell-icon {
-	width: 28px; /* Tamanho do ícone de sino */
+	width: 28px;
 	height: 28px;
-	color: #333; /* Cor do ícone, se for SVG e puder ser estilizado por CSS */
+	color: #333;
 }
 
 .notificacoes-header h2 {
@@ -559,4 +538,8 @@ header {
 
 .between {
 	justify-content: space-between;
+}
+
+.inline {
+	display: inline;
 }
